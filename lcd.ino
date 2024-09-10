@@ -81,6 +81,7 @@ void setup()
 
 void loop()
 {
+  /*
   if (direction == ardRX)
     if (Serial1.available())
     { 
@@ -110,9 +111,9 @@ void loop()
       lcd.setCursor(0, 0); // selecionando coluna 0 e linha 0
       lcd.print(str);
       lcd.setCursor(0, 1);
-      lcd.print(str+16);
+      lcd.print(str+16);'
     }
-
+*/
   if (direction == ardTX)
     if (Serial1.availableForWrite())
     {
