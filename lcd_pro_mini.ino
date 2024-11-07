@@ -47,7 +47,7 @@ int ld = HIGH;
 
 int pos = 32;
 int direction = ardRX;
-char str[49] = "                                                     ";
+char str[49] = "                                                ";
 char c;
 
 char buf[2][40] = { "# MackTempo #\xd\xaSeja bem vindo!!\xd\xa",
@@ -59,6 +59,10 @@ int linha = 0;
 char alerta[8] = "Caiu!\xd\xa";
 int  l = 0;
 int caiu = 0;
+
+int dia;
+int mes;
+int ano;
 
 sensors_event_t a, g, temp;
 sensors_event_t a_old, g_old, temp_old;
@@ -84,7 +88,7 @@ void setup()
     {
       ld = (ld = HIGH)? LOW : HIGH;
       digitalWrite (led_PILOTO, ld);
-      delay (20);
+      delay (200);
     }
 
   ld = HIGH;
@@ -162,7 +166,17 @@ void loop()
   //if (abs(a.acceleration.x - a_old.acceleration.x) > 0.2 || abs(a.acceleration.y-a_old.acceleration.y) > 0.2 || abs(a.acceleration.z-a_old.acceleration.z) > 0.2)
   if (abs(g.gyro.z-g_old.gyro.z) > 0.5)
   {
-    Serial.println(++caiu);
+    //dia = now.day();
+    //mes = now.month();
+    //ano = now.year();
+
+    //Serial.print (dia);
+    //Serial.print ("\\");
+    //Serial.print (mes);
+    //Serial.print ("\\");
+    //Serial.print (ano);
+    //Serial.print (" - ");
+    Serial.println (++caiu);
 
     // Imprimindo no monitor Serial os valores capturados
     /*
